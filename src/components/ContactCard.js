@@ -1,18 +1,27 @@
+import DeleteContact from "./DeleteContact";
+
 function ContactCard(props){
     return(
-        <div className="card mb-3" style="max-width: 540px;">
+        <div className="card">
             <div className="row g-0">
-                <div className="col-md-4">
-                <img src="..." className="img-fluid rounded-start" alt="..."/>
+                <div className="col-md-3 px-3 py-2">
+                <img src={props.img} className="img-fluid rounded-circle" alt="..."/>
                 </div>
-                <div className="col-md-8">
+                <div className="col-md-7">
                     <div className="card-body">
-                        <h5 className="card-title">Card title</h5>
-                        <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p className="card-text"><small className="text-body-secondary">Last updated 3 mins ago</small></p>
+                        <h5 className="card-title">{props.name}</h5>
+                        <p className="card-text"><i className="fa-solid fa-location-dot me-2"></i>{props.address}</p>
+                        <p className="card-text"><i className="fa-solid fa-phone-flip me-2"></i>{props.phone}</p>
+                        <p className="card-text"><i className="fa-solid fa-envelope me-2"></i>{props.email}</p>
                     </div>
+                </div>
+                <div className="col-md-2 d-flex justify-content-around">
+                    <p className="card-text mt-3"><i className="fa-solid fa-pencil"></i></p>
+                    <p className="card-text mt-3"><i className="fa-solid fa-trash-can"></i></p>
                 </div>
             </div>
         </div>
     )
 }
+
+export default ContactCard;
