@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './views/Home';
 import NewContact from './views/NewContact';
 import './App.css';
+import injectContext from './store/context'
 
 function App() {
   return (
@@ -14,4 +15,4 @@ function App() {
   );
 }
 
-export default App;
+export default injectContext(App);

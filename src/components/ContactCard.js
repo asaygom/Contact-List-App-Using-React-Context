@@ -4,8 +4,8 @@ function ContactCard(props){
     return(
         <div className="card">
             <div className="row g-0">
-                <div className="col-md-3 px-3 py-2">
-                <img src={props.img} className="img-fluid rounded-circle" alt="..."/>
+                <div className="col-md-3 px-3 py-2 contactImgBox">
+                <img src={props.img} className="img-fluid rounded-circle contactImg" alt="..."/>
                 </div>
                 <div className="col-md-7">
                     <div className="card-body">
