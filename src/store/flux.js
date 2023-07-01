@@ -2,11 +2,11 @@ const getState = ({setStore,getStore, getActions}) => {
     return {
         store: {
             contact: {
-                name:"",
+                full_name:"",
                 email:"",
-                phone:"",
+                agenda_slug: "asaygom_agenda",
                 address:"",
-                img:""
+                phone:""
             },
             listOfContacts: []
         },
@@ -25,19 +25,20 @@ const getState = ({setStore,getStore, getActions}) => {
             handleSubmit: (event)=>{
                 event.preventDefault();
                 const store = getStore();
-                if(store.contact){
-                    setStore({
-                        listOfContacts: store.listOfContacts.concat(store.contact)
-                    })
-                }
+                fetch("https://assets.breatheco.de/apis/fake/contact/",{
+                    method: "POST",
+                    headers:{"Content-Type":"application/json"},
+                    body: JSON.stringify(store.contact)
+                }).then((response)=>response.json()).then((data)=>console.log(data)).catch((error)=>console.log(error))
+                //if(store.contact){}
                 setStore({
                     contact: {
-                        name:"",
+                        full_name:"",
                         email:"",
-                        phone:"",
+                        agenda_slug: "asaygom_agenda",
                         address:"",
-                        img:""
-                    }
+                        phone:""
+                            }
                 })
             }
         }
