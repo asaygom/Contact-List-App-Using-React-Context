@@ -1,9 +1,3 @@
 .contactImg {
   max-width: 140px !important; 
 }
-
-.contactImgBox {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}

@@ -11,9 +11,16 @@ const getState = ({setStore,getStore, getActions}) => {
             listOfContacts: []
         },
         actions: {
-            handleChange: (event, input)=>{
+            getContacts: ()=>{
+                fetch("https://assets.breatheco.de/apis/fake/contact/agenda/asaygom_agenda",{
+                    method: "GET",
+                    headers:{"Content-Type":"application/json"}
+                }).then((response)=> response.json()).then((data)=>setStore({listOfContacts: data})).catch((error)=>console.log(error))
+            },
+            handleChange: (event)=>{
                 const store = getStore();
-                setStore({contact: {input: event.target.value} })
+                setStore({contact: {...store.contact, [event.target.name]: event.target.value} }) 
+                console.log(store.contact)
             },
             handleSubmit: (event)=>{
                 event.preventDefault();

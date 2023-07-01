@@ -1,11 +1,12 @@
 import ContactCard from "../components/ContactCard";
 import DeleteContact from "../components/DeleteContact";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Context } from "../store/context";
 
 function Home(props){
     const { store, actions } = useContext(Context);
+    useEffect(()=>{actions.getContacts()},[])
     return(
         <div className="container mb-2">
             <div className="d-grid d-flex justify-content-end">
