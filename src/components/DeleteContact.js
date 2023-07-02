@@ -1,4 +1,8 @@
-function DeleteContact(){
+import { useParams } from "react-router-dom";
+
+const DeleteContactID = () =>{ const routeParams = useParams()}
+
+function DeleteContact(props){
     return(
     <div className="modal fade" tabIndex="-1" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
@@ -12,7 +16,7 @@ function DeleteContact(){
                 </div>
                 <div className="modal-footer">
                     <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" className="btn btn-primary">Yes</button>
+                    <button type="button" className="btn btn-primary" onClick={()=>console.log(props.id)}>Yes</button>
                 </div>
             </div>
         </div>

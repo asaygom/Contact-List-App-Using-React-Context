@@ -6,7 +6,7 @@ function NewContact(){
     const { store, actions } = useContext(Context);
     return(
         <div className="container p-3">
-            <h2 className="text-center">Add a new contact</h2>
+            <h2 className="text-center">Edit contact information</h2>
             <form className="row g-3" onSubmit={actions.handleSubmit}>
                 <div className="col-md-12">
                     <label htmlFor="inputName" className="form-label">Full Name</label>
