@@ -1,8 +1,12 @@
 import { useParams } from "react-router-dom";
+import { useContext } from "react";
+import { Context } from "../store/context";
+
 
 const DeleteContactID = () =>{ const routeParams = useParams()}
 
 function DeleteContact(props){
+    const { store, actions } = useContext(Context);
     return(
     <div className="modal fade" tabIndex="-1" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
@@ -12,11 +16,11 @@ function DeleteContact(props){
                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div className="modal-body">
-                    <p>This will delete the contact selected</p>
+                    <p>This action will delete the contact selected</p>
                 </div>
                 <div className="modal-footer">
                     <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" className="btn btn-primary" onClick={()=>console.log(props.id)}>Yes</button>
+                    <button type="button" className="btn btn-primary" onClick={()=>actions.deleteContact(props.idToDelete)}>Yes</button>
                 </div>
             </div>
         </div>

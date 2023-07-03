@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import DeleteContact from "./DeleteContact";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Context } from "../store/context";
 
 
@@ -21,11 +21,11 @@ function ContactCard(props){
                     </div>
                 </div>
                 <div className="col-md-2 d-flex align-items-center justify-content-around">
-                    <button className="btn"><i className="fa-solid fa-pencil"></i></button>
-                    <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={()=>actions.deleteContact(props.id)}><i className="fa-solid fa-trash-can"></i></button>
+                    <Link to="/edit-contact"><button className="btn"><i className="fa-solid fa-pencil"></i></button></Link>
+                    <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i className="fa-solid fa-trash-can"></i></button>
                 </div>
             </div>
-            <DeleteContact />
+            <DeleteContact idToDelete={props.id}/>
         </div>
     )
 }
