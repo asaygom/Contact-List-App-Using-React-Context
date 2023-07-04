@@ -14,7 +14,7 @@ function ContactCard(props){
                 </div>
                 <div className="col-md-7">
                     <div className="card-body">
-                        <h5 className="card-title">{props.name}</h5>
+                        <h5 className="card-title">{props.name}{props.id}</h5>
                         <p className="card-text"><i className="fa-solid fa-location-dot me-2"></i>{props.address}</p>
                         <p className="card-text"><i className="fa-solid fa-phone-flip me-2"></i>{props.phone}</p>
                         <p className="card-text"><i className="fa-solid fa-envelope me-2"></i>{props.email}</p>
@@ -22,10 +22,9 @@ function ContactCard(props){
                 </div>
                 <div className="col-md-2 d-flex align-items-center justify-content-around">
                     <Link to="/edit-contact"><button className="btn"><i className="fa-solid fa-pencil"></i></button></Link>
-                    <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i className="fa-solid fa-trash-can"></i></button>
+                    <button className="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={()=>props.setID(props.id)}><i className="fa-solid fa-trash-can"></i></button>
                 </div>
             </div>
-            <DeleteContact idToDelete={props.id}/>
         </div>
     )
 }
