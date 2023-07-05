@@ -1,9 +1,5 @@
-//import { useParams } from "react-router-dom";
 import { useContext, useState } from "react";
 import { Context } from "../store/context";
-
-
-//const DeleteContactID = () =>{ const routeParams = useParams()}
 
 function DeleteContact(props){
     const [closeModal,setCloseModal] = useState(false)
@@ -22,7 +18,7 @@ function DeleteContact(props){
                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div className="modal-body">
-                    <p>This action will delete the contact selected {props.idToDelete}</p>
+                    <p>This action will delete the contact selected</p>
                 </div>
                 <div className="modal-footer">
                     <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
